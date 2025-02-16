@@ -117,6 +117,9 @@ class LassoRegression(LinearRegression):
             if np.sum(np.abs(self.beta - beta_old)) < self.tol:
                 break
 
+    def grad(self, beta: np.array, X_b: np.array, y: np.array) -> np.array:
+        raise NotImplementedError("Lasso regression does not have a closed form gradient")
+
 class Classification(Regression):
     def __init__(self):
         super().__init__()
